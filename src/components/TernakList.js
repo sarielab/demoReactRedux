@@ -1,11 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const TernakList = props => (
-  <div>
-    {props.ternaks.map( (ternak, idx) => <p key={idx}>{ternak.jenis}</p>)}
-  </div>
-)
+import { fetchTernak } from '../actions'
+
+class TernakList extends React.Component {
+  componentDidMount() {
+    this.props.fetchTernak()
+  }
+
+  render() {
+    return (
+      <div className="App-intro">
+        { this.props.ternaks.length === 0 && <h4>Loading Ternaks....</h4>}
+        { this.props.ternaks.map((ternak, index) => <p key={index}>{ternak.jenis}</p>)}
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = state => {
   return {
@@ -13,4 +24,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect (mapStateToProps, null) (TernakList)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchTernak: () => dispatch(fetchTernak()),
+  }
+}
+
+
+export default connect (mapStateToProps, mapDispatchToProps) (TernakList)
