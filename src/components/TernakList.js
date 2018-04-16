@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const TernakList = props => (
   <div>
@@ -6,4 +7,10 @@ const TernakList = props => (
   </div>
 )
 
-export default TernakList
+const mapStateToProps = state => {
+  return {
+    ternaks: state.ternaks
+  }
+}
+
+export default connect (mapStateToProps, null) (TernakList)
