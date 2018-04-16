@@ -16,6 +16,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "serve": "json-server data/db.json --port 1234 --watch --routes data/routes.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

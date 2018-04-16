@@ -1,4 +1,50 @@
 {
+  "kandangs": [
+    {
+      "id": 1,
+      "lokasi": "utara"
+    },
+    {
+      "id": 2,
+      "lokasi": "selatan"
+    },
+    {
+      "id": 3,
+      "lokasi": "timur"
+    },
+    {
+      "id": 4,
+      "lokasi": "barat"
+    },
+    {
+      "lokasi": "tes",
+      "id": 5
+    },
+    {
+      "lokasi": "",
+      "id": 6
+    },
+    {
+      "lokasi": "",
+      "id": 7
+    },
+    {
+      "lokasi": "",
+      "id": 8
+    },
+    {
+      "lokasi": "jakarta",
+      "id": 9
+    },
+    {
+      "lokasi": "timur",
+      "id": 10
+    },
+    {
+      "lokasi": "hehehe",
+      "id": 11
+    }
+  ],
   "ternaks": [
     {
       "jenis": "Ayam",
@@ -24,6 +70,31 @@
       "jenis": "bekicot",
       "jumlah": 1,
       "id": 5
+    },
+    {
+      "jenis": "testing",
+      "jumlah": 1,
+      "id": 6
+    },
+    {
+      "jenis": "tes",
+      "jumlah": 1,
+      "id": 7
+    },
+    {
+      "jenis": "tos",
+      "jumlah": 1,
+      "id": 8
+    },
+    {
+      "jenis": "hehehe",
+      "jumlah": 1,
+      "id": 9
+    },
+    {
+      "jenis": "huaahhahahha",
+      "jumlah": 1,
+      "id": 10
     }
   ]
 }

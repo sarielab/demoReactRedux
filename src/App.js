@@ -7,6 +7,7 @@ import People from './components/People'
 import Form from './components/Form'
 import NotFound from './components/NotFound'
 import Ternak from './pages/Ternak'
+import Kandang from './pages/Kandang'
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
                   <Redirect from="/help" to="/people" />
                   <Route path='/people' component={People}/>
                   <Route path='/ternak' component={Ternak}/>
+                  <Route path='/kandang' component={Kandang}/>
                   <Route component={NotFound}/>
                 </Switch>
             <Footer />
