@@ -1,15 +1,19 @@
 import Axios from 'axios'
 
-export const addTernak = jenis => {
+import {
+  ADD_TERNAK, FETCH_TERNAK_SUCCESS
+} from './actionTypes'
+
+export const addTernak = ternak => {
   return {
-    type: 'ADD_TERNAK',
-    payload: jenis
+    type: ADD_TERNAK,
+    payload: ternak
   }
 }
 
 export const fetchTernakSuccess = ternaks => {
   return {
-    type: 'FETCH_TERNAK_SUCCESS',
+    type: FETCH_TERNAK_SUCCESS,
     payload: ternaks,
   }
 }

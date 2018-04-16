@@ -5,7 +5,8 @@ import FormItem from './FormItem'
 import { addTernak } from '../actions'
 
 const defaultState = {
-  jenis: ''
+  jenis: '',
+  jumlah: 1,
 }
 
 class AddTernakForm extends React.Component {
@@ -15,13 +16,12 @@ class AddTernakForm extends React.Component {
   }
 
   handleChange = e => {
-    this.setState({jenis: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const jenis = this.state.jenis
-    this.props.addTernak(jenis)
+    this.props.addTernak(this.state)
     this.setState({...defaultState})
   }
 
@@ -37,6 +37,13 @@ class AddTernakForm extends React.Component {
             value={this.state.jenis}
             handleChange={this.handleChange}
           />
+          <FormItem
+            type="number"
+            name="jumlah"
+            placeholder="masukan jumlah"
+            value={this.state.jumlah}
+            handleChange={this.handleChange}
+          />
           <input type="submit" value="Add Jenis"/>
         </form>
       </div>
@@ -46,7 +53,7 @@ class AddTernakForm extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTernak: jenis => dispatch(addTernak(jenis)),
+    addTernak: ternak => dispatch(addTernak(ternak)),
   }
 }
 

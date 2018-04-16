@@ -1,7 +1,7 @@
 {
   "ternaks": [
-    { "jenis": "Ayam", "id": 1 },
-    { "jenis": "Bebek", "id": 2},
-    { "jenis": "Cacing", "id": 3}
+    { "jenis": "Ayam", "id": 1, "jumlah": 3 },
+    { "jenis": "Bebek", "id": 2, "jumlah": 5},
+    { "jenis": "Cacing", "id": 3, "jumlah": 10}
   ]
 }

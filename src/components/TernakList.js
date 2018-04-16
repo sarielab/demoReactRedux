@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { fetchTernak } from '../actions'
+import TernakItem from './TernakItem'
 
 class TernakList extends React.Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class TernakList extends React.Component {
     return (
       <div className="App-intro">
         { this.props.ternaks.length === 0 && <h4>Loading Ternaks....</h4>}
-        { this.props.ternaks.map((ternak, index) => <p key={index}>{ternak.jenis}</p>)}
+        { this.props.ternaks.map((ternak, index) => <TernakItem key={index} {...ternak}/>)}
       </div>
     )
   }
