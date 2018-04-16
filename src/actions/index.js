@@ -1,13 +1,22 @@
 import Axios from 'axios'
 
 import {
-  ADD_TERNAK, FETCH_TERNAK_SUCCESS
+  ADD_TERNAK, ADD_TERNAK_SUCCESS, FETCH_TERNAK_SUCCESS
 } from './actionTypes'
 
-export const addTernak = ternak => {
+export const addTernakSuccess = newTernak => {
   return {
-    type: ADD_TERNAK,
-    payload: ternak
+    type: ADD_TERNAK_SUCCESS,
+    payload: newTernak
+  }
+}
+
+export const addTernak = newTernak => {
+  console.log(newTernak)
+  return (dispatch) => {
+    Axios.post('http://localhost:3000/ternaks', newTernak)
+      .then(res => {console.log(res.data)})
+      .catch(err => {console.log(err)})
   }
 }
 
@@ -20,7 +29,7 @@ export const fetchTernakSuccess = ternaks => {
 
 export const fetchTernak = () => {
   return (dispatch) => {
-    Axios.get('http://localhost:1234/ternaks')
+    Axios.get('http://localhost:3000/ternaks')
     .then(res => dispatch(fetchTernakSuccess(res.data)))
     .catch(err => {console.log(err)})
   }

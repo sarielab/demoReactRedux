@@ -1,10 +1,10 @@
-import { ADD_TERNAK, FETCH_TERNAK_SUCCESS } from '../actions/actionTypes'
+import { ADD_TERNAK_SUCCESS, FETCH_TERNAK_SUCCESS } from '../actions/actionTypes'
 
 const initialState = []
 
 const ternakReducer = (state = initialState, action) => {
   switch(action.type) {
-    case ADD_TERNAK: {
+    case ADD_TERNAK_SUCCESS: {
       let newId = state.length
       const newTernak = { ...action.payload, id: newId}
       const newTernaks = [...state, newTernak]

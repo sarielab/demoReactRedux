@@ -53,7 +53,7 @@ class AddTernakForm extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTernak: ternak => dispatch(addTernak(ternak)),
+    addTernak: newTernak => dispatch(addTernak(newTernak)),
   }
 }
 
