@@ -3,6 +3,7 @@ import { ADD_KANDANG_SUCCESS, ADD_KANDANG_LOADING, ADD_KANDANG_FAILED, FETCH_KAN
 const initialState = {
   data: [],
   isFetching: false,
+  isUpdated: false,
   isUpdating: false,
   isUpdateError: false,
   updateErrorMsg: '',
@@ -16,7 +17,7 @@ const kandangReducer = (state = initialState, action) => {
       let newId = state.length
       const newKandang = { ...action.payload, id: newId}
       const newKandangs = [...state.data, newKandang]
-      return { ...state, data: newKandangs, isUpdating: false }
+      return { ...state, data: newKandangs, isUpdating: false, isUpdated: true }
     }
     case ADD_KANDANG_LOADING: {
       return { ...state, isUpdating: true, isUpdateError: false }

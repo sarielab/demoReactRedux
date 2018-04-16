@@ -3,6 +3,7 @@ import { ADD_TERNAK_SUCCESS, ADD_TERNAK_LOADING, ADD_TERNAK_FAILED, FETCH_TERNAK
 const initialState = {
   data: [],
   isFetching: false,
+  isUpdated: false,
   isUpdating: false,
   isUpdateError: false,
   updateErrorMsg: '',
@@ -16,7 +17,7 @@ const ternakReducer = (state = initialState, action) => {
       let newId = state.length
       const newTernak = { ...action.payload, id: newId}
       const newTernaks = [...state.data, newTernak]
-      return { ...state, data: newTernaks, isUpdating: false }
+      return { ...state, data: newTernaks, isUpdating: false, isUpdated: true }
     }
     case ADD_TERNAK_LOADING: {
       return { ...state, isUpdating: true, isUpdateError: false }

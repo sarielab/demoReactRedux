@@ -90,6 +90,11 @@
       "lokasi": "testing",
       "submited": false,
       "id": 22
+    },
+    {
+      "lokasi": "hahahahaa",
+      "submited": false,
+      "id": 23
     }
   ],
   "ternaks": [
@@ -172,6 +177,35 @@
       "jenis": "ternak",
       "jumlah": 1,
       "id": 16
+    },
+    {
+      "jenis": "tes",
+      "jumlah": 1,
+      "id": 17
+    },
+    {
+      "jenis": "tes",
+      "jumlah": 1,
+      "isSubmitted": false,
+      "id": 18
+    },
+    {
+      "jenis": "hahahahhaaaaaa",
+      "jumlah": 1,
+      "isSubmitted": false,
+      "id": 19
+    },
+    {
+      "jenis": "teee",
+      "jumlah": 1,
+      "isSubmitted": false,
+      "id": 20
+    },
+    {
+      "jenis": "tessss",
+      "jumlah": 1,
+      "isSubmitted": false,
+      "id": 21
     }
   ]
 }

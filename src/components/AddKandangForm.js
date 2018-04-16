@@ -31,6 +31,7 @@ class AddKandangForm extends React.Component {
         <h1>Tambah lokasi kandang</h1>
         { this.state.isSubmited && this.props.isError && <h1>{this.props.updateErrorMsg}</h1>}
         { this.state.isSubmited && this.props.isUpdating && <h1>Loading....</h1>}
+        { this.state.isSubmited && this.props.isUpdated && <h1>Sukses update</h1>}
         {
           !this.state.isSubmited &&
           <form onSubmit={this.handleSubmit}>
@@ -52,9 +53,9 @@ class AddKandangForm extends React.Component {
 
 const mapStateToProps = state => {
   const kandangs = state.kandangs
-  const {isUpdating, isUpdateError, updateErrorMsg} = kandangs
+  const {isUpdating, isUpdateError, updateErrorMsg, isUpdated} = kandangs
   return {
-    isUpdating, isUpdateError, updateErrorMsg
+    isUpdating, isUpdateError, updateErrorMsg, isUpdated
   }
 }
 
