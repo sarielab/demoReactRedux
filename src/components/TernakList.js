@@ -12,8 +12,8 @@ class TernakList extends React.Component {
   render() {
     return (
       <div className="App-intro">
-        { this.props.ternaks.length === 0 && <h4>Loading Ternaks....</h4>}
-        { this.props.ternaks.map((ternak, index) => <TernakItem key={index} {...ternak}/>)}
+        { this.props.ternaks.isLoading && <h4>Loading Ternaks....</h4>}
+        { this.props.ternaks.data.map((ternak, index) => <TernakItem key={index} {...ternak}/>)}
       </div>
     )
   }

@@ -43,6 +43,22 @@
     {
       "lokasi": "hehehe",
       "id": 11
+    },
+    {
+      "lokasi": "barat",
+      "id": 12
+    },
+    {
+      "lokasi": "merdeka",
+      "id": 13
+    },
+    {
+      "lokasi": "dimana",
+      "id": 14
+    },
+    {
+      "lokasi": "dimanaa kekemananansdasd",
+      "id": 15
     }
   ],
   "ternaks": [
@@ -95,6 +111,21 @@
       "jenis": "huaahhahahha",
       "jumlah": 1,
       "id": 10
+    },
+    {
+      "jenis": "bebek",
+      "jumlah": 1,
+      "id": 11
+    },
+    {
+      "jenis": "kepiting",
+      "jumlah": 1,
+      "id": 12
+    },
+    {
+      "jenis": "kecoak",
+      "jumlah": "5",
+      "id": 13
     }
   ]
 }

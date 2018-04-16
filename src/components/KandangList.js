@@ -12,8 +12,8 @@ class KandangList extends React.Component {
   render() {
     return (
       <div className="App-intro">
-        { this.props.kandangs.length === 0 && <h4>Loading Kandangs....</h4>}
-        { this.props.kandangs.map((kandang, index) => <KandangItem key={index} {...kandang}/>)}
+        { this.props.kandangs.isLoading && <h4>Loading Kandangs....</h4>}
+        { this.props.kandangs.data.map((kandang, index) => <KandangItem key={index} {...kandang}/>)}
       </div>
     )
   }
