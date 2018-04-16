@@ -1,5 +1,7 @@
+import Axios from 'axios'
+
 import {
-  ADD_KANDANG, ADD_KANDANG_SUCCESS, FETCH_KANDANG_SUCCESS, FETCH_KANDANG_LOADING, FETCH_KANDANG_FAILED,
+  ADD_KANDANG, ADD_KANDANG_SUCCESS, FETCH_KANDANG_SUCCESS, FETCH_KANDANG_LOADING, FETCH_KANDANG_FAILED, ADD_KANDANG_LOADING
 } from './actionTypes'
 
 export const addKandangSuccess = newKandang => {
@@ -12,6 +14,7 @@ export const addKandangSuccess = newKandang => {
 export const addKandang = newKandang => {
   console.log(newKandang)
   return (dispatch) => {
+    dispatch({type: ADD_KANDANG_LOADING})
     Axios.post('http://localhost:3000/kandangs', newKandang)
       .then(res => {dispatch(addKandangSuccess(res.data))})
       .catch(err => {console.log(err)})

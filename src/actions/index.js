@@ -1,5 +1,3 @@
-import Axios from 'axios'
-
 import { addTernak, addTernakSuccess, fetchTernak, fetchTernakFailed, fetchTernakSuccess } from './ternakAction'
 import { addKandang, addKandangSuccess, fetchKandang, fetchKandangFailed, fetchKandangSuccess } from './kandangAction'
 

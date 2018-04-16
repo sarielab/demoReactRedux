@@ -29,25 +29,38 @@ class AddTernakForm extends React.Component {
     return (
       <div>
         <h1>Tambah jenis ternak</h1>
-        <form onSubmit={this.handleSubmit}>
-          <FormItem
-            type="text"
-            name="jenis"
-            placeholder="masukan jenis"
-            value={this.state.jenis}
-            handleChange={this.handleChange}
-          />
-          <FormItem
-            type="number"
-            name="jumlah"
-            placeholder="masukan jumlah"
-            value={this.state.jumlah}
-            handleChange={this.handleChange}
-          />
-          <input type="submit" value="Add Jenis"/>
-        </form>
+        { this.state.isSubmited && this.props.isError && <h1>{this.props.updateErrorMsg}</h1>}
+        { this.state.isSubmited && this.props.isUpdating && <h1>Loading....</h1>}
+        {
+          !this.state.isSubmited &&
+          <form onSubmit={this.handleSubmit}>
+            <FormItem
+              type="text"
+              name="jenis"
+              placeholder="masukan jenis"
+              value={this.state.jenis}
+              handleChange={this.handleChange}
+            />
+            <FormItem
+              type="number"
+              name="jumlah"
+              placeholder="masukan jumlah"
+              value={this.state.jumlah}
+              handleChange={this.handleChange}
+            />
+            <input type="submit" value="Add Jenis"/>
+          </form>
+        }
       </div>
     )
+  }
+}
+
+const mapStateToProps = state => {
+  const ternaks = state.ternaks
+  const {isUpdating, isUpdateError, updateErrorMsg} = ternaks
+  return {
+    isUpdating, isUpdateError, updateErrorMsg
   }
 }
 
@@ -57,4 +70,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddTernakForm)
+export default connect(mapStateToProps, mapDispatchToProps)(AddTernakForm)

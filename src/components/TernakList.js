@@ -12,16 +12,19 @@ class TernakList extends React.Component {
   render() {
     return (
       <div className="App-intro">
-        { this.props.ternaks.isLoading && <h4>Loading Ternaks....</h4>}
-        { this.props.ternaks.data.map((ternak, index) => <TernakItem key={index} {...ternak}/>)}
+        { this.props.isLoading && <h4>Loading Ternaks....</h4>}
+        { this.props.isFetchError && <h4>{this.props.fetchErrorMsg}</h4>}
+        { this.props.data.map((ternak, index) => <TernakItem key={index} {...ternak}/>)}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
+  const ternaks = state.ternaks
+  const {data, isLoading, isFetching, isFetchError, fetchErrorMsg} = ternaks
   return {
-    ternaks: state.ternaks
+    data, isLoading, isFetching, isFetchError, fetchErrorMsg
   }
 }
 

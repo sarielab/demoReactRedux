@@ -19,6 +19,8 @@ class App extends Component {
               <ul>
                 <li><Link to="/people">People</Link></li>
                 <li><Link to="/form">Form</Link></li>
+                <li><Link to="/kandang">Kandang</Link></li>
+                <li><Link to="/ternak">Ternak</Link></li>
                 <li><Link to="/help">Redirect to people</Link></li>
               </ul>
                 <Switch>

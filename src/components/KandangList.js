@@ -12,16 +12,19 @@ class KandangList extends React.Component {
   render() {
     return (
       <div className="App-intro">
-        { this.props.kandangs.isLoading && <h4>Loading Kandangs....</h4>}
-        { this.props.kandangs.data.map((kandang, index) => <KandangItem key={index} {...kandang}/>)}
+        { this.props.isLoading && <h4>Loading Kandangs....</h4>}
+        { this.props.isFetchError && <h4>{this.props.fetchErrorMsg}</h4>}
+        { this.props.data.map((kandang, index) => <KandangItem key={index} {...kandang}/>)}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
+  const kandangs = state.kandangs
+  const {data, isLoading, isFetching, isFetchError, fetchErrorMsg} = kandangs
   return {
-    kandangs: state.kandangs
+    data, isLoading, isFetching, isFetchError, fetchErrorMsg
   }
 }
 

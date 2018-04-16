@@ -59,6 +59,37 @@
     {
       "lokasi": "dimanaa kekemananansdasd",
       "id": 15
+    },
+    {
+      "lokasi": "tes",
+      "id": 16
+    },
+    {
+      "lokasi": "TOS",
+      "id": 17
+    },
+    {
+      "lokasi": "HEHEHHE",
+      "id": 18
+    },
+    {
+      "lokasi": "HIHIHI",
+      "id": 19
+    },
+    {
+      "lokasi": "kandang",
+      "submited": false,
+      "id": 20
+    },
+    {
+      "lokasi": "tambah",
+      "submited": false,
+      "id": 21
+    },
+    {
+      "lokasi": "testing",
+      "submited": false,
+      "id": 22
     }
   ],
   "ternaks": [
@@ -126,6 +157,21 @@
       "jenis": "kecoak",
       "jumlah": "5",
       "id": 13
+    },
+    {
+      "jenis": "hehehheee",
+      "jumlah": "12121021212121",
+      "id": 14
+    },
+    {
+      "jenis": "hahaha",
+      "jumlah": "1001201021212121",
+      "id": 15
+    },
+    {
+      "jenis": "ternak",
+      "jumlah": 1,
+      "id": 16
     }
   ]
 }

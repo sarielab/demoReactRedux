@@ -5,7 +5,8 @@ import FormItem from './FormItem'
 import { addKandang } from '../actions'
 
 const defaultState = {
-  lokasi: ''
+  lokasi: '',
+  submited: false
 }
 
 class AddKandangForm extends React.Component {
@@ -21,25 +22,39 @@ class AddKandangForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.addKandang(this.state)
-    this.setState({...defaultState})
+    this.setState({...defaultState, isSubmited: true})
   }
 
   render() {
     return (
       <div>
         <h1>Tambah lokasi kandang</h1>
-        <form onSubmit={this.handleSubmit}>
-          <FormItem
-            type="text"
-            name="lokasi"
-            placeholder="masukan lokasi"
-            value={this.state.lokasi}
-            handleChange={this.handleChange}
-          />
-          <input type="submit" value="Add Kandang"/>
-        </form>
+        { this.state.isSubmited && this.props.isError && <h1>{this.props.updateErrorMsg}</h1>}
+        { this.state.isSubmited && this.props.isUpdating && <h1>Loading....</h1>}
+        {
+          !this.state.isSubmited &&
+          <form onSubmit={this.handleSubmit}>
+            <FormItem
+              type="text"
+              name="lokasi"
+              placeholder="masukan lokasi"
+              value={this.state.lokasi}
+              handleChange={this.handleChange}
+            />
+            <input type="submit" value="Add Kandang"/>
+          </form>
+        }
+
       </div>
     )
+  }
+}
+
+const mapStateToProps = state => {
+  const kandangs = state.kandangs
+  const {isUpdating, isUpdateError, updateErrorMsg} = kandangs
+  return {
+    isUpdating, isUpdateError, updateErrorMsg
   }
 }
 
@@ -49,4 +64,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddKandangForm)
+export default connect(mapStateToProps, mapDispatchToProps)(AddKandangForm)
