@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-import FormItem from './FormItem';
+import FormItem from './FormItem'
+import { addTernak } from '../actions'
 
 const defaultState = {
   jenis: ''
@@ -42,4 +44,10 @@ class AddTernakForm extends React.Component {
   }
 }
 
-export default AddTernakForm
+const mapDispatchToProps = dispatch => {
+  return {
+    addTernak: jenis => dispatch(addTernak(jenis)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(AddTernakForm)

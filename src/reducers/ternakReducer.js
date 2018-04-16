@@ -5,8 +5,15 @@ const initialState = [
 ]
 
 const ternakReducer = (state = initialState, action) => {
-  // kosong dulu
-  return state
+  switch(action.type) {
+    case 'ADD_TERNAK': {
+      let newId = state.length;
+      const newTernak = { jenis: action.payload, id: newId}
+      const newTernaks = [...state, newTernak];
+      return newTernaks;
+    }
+    default: return state;
+  }
 }
 
 export default ternakReducer

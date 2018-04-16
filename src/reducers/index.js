@@ -5,4 +5,4 @@ const rootReducer = combineReducers({
   ternaks: ternakReducer,
 })
 
-export default rootReducer;
+export default rootReducer
