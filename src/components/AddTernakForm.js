@@ -1,45 +1,63 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
 
-import FormItem from './FormItem';
+import FormItem from './FormItem'
+import { addTernak } from '../redux/actions'
 
-const defaultState = {
-  jenis: ''
+const initialForm = {
+  jenis: '',
+  jumlah: 1,
 }
 
 class AddTernakForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = defaultState
+    this.state = initialForm
   }
-
-  handleChange = e => {
-    this.setState({jenis: e.target.value})
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
   }
-
   handleSubmit = (e) => {
     e.preventDefault()
-    const jenis = this.state.jenis
-    this.props.addTernak(jenis)
-    this.setState({...defaultState})
+    this.props.tambahTernak(this.state)
+    this.setState({ ...initialForm })
   }
-
   render() {
-    return (
-      <div>
-        <h1>Tambah jenis ternak</h1>
-        <form onSubmit={this.handleSubmit}>
-          <FormItem
-            type="text"
-            name="jenis"
-            placeholder="masukan jenis"
-            value={this.state.jenis}
-            handleChange={this.handleChange}
-          />
-          <input type="submit" value="Add Jenis"/>
-        </form>
-      </div>
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <FormItem
+          type="text"
+          name="jenis"
+          placeholder="masukan jenis"
+          value={this.state.jenis}
+          handleChange={this.handleChange}
+        />
+        <FormItem
+          type="number"
+          name="jumlah"
+          placeholder="masukan jumlah"
+          value={this.state.jumlah}
+          handleChange={this.handleChange}
+        />
+        <input type="submit" value="Add Jenis"/>
+      </form>
     )
   }
 }
 
-export default AddTernakForm
+const mapStateToProps = (state) => {
+  return {
+    ternaks: state.ternaks
+  }
+}
+// fungsi
+const mapDispatchToProps = dispatch => {
+  return {
+    // tambahTernak: function(ternak) {
+    //   return dispatch(addTernak(ternak))
+    // }
+    tambahTernak: (ternak) => dispatch(addTernak(ternak))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTernakForm)

@@ -1,9 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const TernakList = props => (
-  <div>
-    {props.ternaks.map( (ternak, idx) => <p key={idx}>{ternak.jenis}</p>)}
-  </div>
-)
+const TernakList = props => {
+  return(
+    <div>
+      { props.ternaks.map(ternak => <h4 key={ternak.id}>{ternak.jenis} jumlahnya {ternak.jumlah}</h4>)}
+    </div>
+  )
+}
 
-export default TernakList
+const mapStateToProps = state => {
+  // ambil dari reducers> indexjs> ternakReducer
+  return {
+    ternaks: state.ternaks.data,
+    isLoading: state.ternaks.isLoading,
+    isUpdating: state.ternaks.isUpdating
+  }
+}
+
+export default connect(mapStateToProps, null) (TernakList)

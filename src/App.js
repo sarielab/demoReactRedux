@@ -19,6 +19,8 @@ class App extends Component {
                 <li><Link to="/people">People</Link></li>
                 <li><Link to="/form">Form</Link></li>
                 <li><Link to="/help">Redirect to people</Link></li>
+                <li><Link to="/ternak">Ternak</Link></li>
+
               </ul>
                 <Switch>
                   <Route exact path='/' component={People}/>
