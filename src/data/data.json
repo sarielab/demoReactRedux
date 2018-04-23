@@ -1,0 +1,12 @@
+{
+  "ternaks": [
+      { "jenis": "Ayam", "jumlah": 1, "id": 1 },
+      { "jenis": "Bebek", "jumlah": 5, "id": 2},
+      { "jenis": "Cacing", "jumlah": 6, "id": 3}
+  ],
+  "kandangs": [
+    {"nama": "kandang1", "lokasi": "barat", "id": 1 },
+    {"nama": "kandang2", "lokasi": "timur", "id": 2 },
+    {"nama": "kandang3", "lokasi": "selatan", "id": 3 }
+  ]
+}

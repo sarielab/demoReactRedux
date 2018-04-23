@@ -1,27 +1,18 @@
 /* reducers > ternakReducer.js */
 
 const initialState = {
-  data : [
-    { jenis: 'Ayam', jumlah: 1, id: 1 },
-    { jenis: 'Bebek', jumlah: 5, id: 2},
-    { jenis: 'Cacing', jumlah: 6, id: 3},
-  ],
+  data : [],
   isLoading: false,
   isUpdating: false,
+  fetchError: false,
+  fetchErrorMessage: ''
 }
-/*
-action = {
-  type: 'ADD_TERNAK' 'delete_ternak' 'edit_ternak' 'fetch_ternak'
-  payload: data
-}
-*/
 const ternakReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'ADD_TERNAK': {
       const oldData = state.data
       const newId = oldData.length || 1;
 
-      //  { jenis: 'Cacing', jumlah: 6, id: 3},
       const newTernak = {
         ...action.payload,
         id: newId
@@ -29,6 +20,23 @@ const ternakReducer = (state = initialState, action) => {
 
       const newData = [...oldData, newTernak]
       const newState = {...state, data: newData}
+      return newState
+    }
+    case 'FETCH_TERNAK_SUCCESS': {
+      const newState = {...state, data: action.payload, isLoading: false}
+      return newState
+    }
+    case 'FETCH_TERNAK_LOADING' :{
+      const newState = {...state, isLoading: true}
+      return newState
+    }
+    case 'FETCH_TERNAK_ERROR' :{
+      const newState = {
+        ...state,
+        fetchError: true,
+        isLoading: false,
+        fetchErrorMessage: action.payload
+      }
       return newState
     }
     default: return state

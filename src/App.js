@@ -7,6 +7,7 @@ import People from './components/People'
 import Form from './components/Form'
 import NotFound from './components/NotFound'
 import Ternak from './pages/Ternak'
+import Kandang from './components/Kandang'
 
 class App extends Component {
   render() {
@@ -16,13 +17,14 @@ class App extends Component {
           <div>
             <Header />
               <ul>
+                <li><Link to="/kandang">Kandang</Link></li>
                 <li><Link to="/people">People</Link></li>
                 <li><Link to="/form">Form</Link></li>
                 <li><Link to="/help">Redirect to people</Link></li>
                 <li><Link to="/ternak">Ternak</Link></li>
-
               </ul>
                 <Switch>
+                  <Route exact path='/kandang' component={Kandang}/>
                   <Route exact path='/' component={People}/>
                   <Route exact path='/form' component={Form}/>
                   <Redirect from="/help" to="/people" />

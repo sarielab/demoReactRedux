@@ -46,12 +46,14 @@ class AddTernakForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  // berhub reducers
   return {
     ternaks: state.ternaks
   }
 }
 // fungsi
 const mapDispatchToProps = dispatch => {
+  // berhub sama action
   return {
     // tambahTernak: function(ternak) {
     //   return dispatch(addTernak(ternak))
